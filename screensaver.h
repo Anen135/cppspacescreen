@@ -27,7 +27,7 @@ void drawArt(char **art, int artHeight, int x, int y, char screen[HEIGHT][WIDTH]
 void updateObjects() {
     for (int i = 0; i < NUM_OBJECTS; ++i) {
         if (!objects[i].active) {
-            // Уменьшаем таймер появления
+            // таймер появления
             if (--objects[i].spawnCooldown <= 0) {
                 objects[i].active = 1;
                 objects[i].x = WIDTH + rand() % 40;
@@ -84,8 +84,7 @@ void drawScene() {
         );
     }
 
-
-    // Переносим в consoleBuffer
+    // Оптимизация consoleBuffer
     int idx = 0;
     for (int y = 0; y < HEIGHT; ++y) {
         for (int x = 0; x < WIDTH; ++x) {
@@ -95,7 +94,6 @@ void drawScene() {
     }
     consoleBuffer[idx] = '\0';
 
-    // Печатаем всё одной операцией
-    printf("\033[H");           // Курсор в начало
-    fwrite(consoleBuffer, 1, idx, stdout); // Быстро
+    printf("\033[H");
+    fwrite(consoleBuffer, 1, idx, stdout); 
 }

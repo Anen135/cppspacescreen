@@ -15,7 +15,6 @@ int main() {
     initStars();
     initObjects();
 
-    // Скрыть курсор
     printf("\033[?25l");
 
     while (1) {

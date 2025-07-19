@@ -15,10 +15,10 @@ typedef struct {
     int currentFrame;      // Текущий кадр
     int frameDelay;        // Сколько тиков между кадрами
     int tickCounter;       // Счётчик тиков
-    int height;
-    int active;         // 0 = неактивен, не отрисовывается
-    int spawnCooldown;  // Время ожидания перед появлением
-    int x, y;
+    int height;            // Высота объекта
+    int active;            // 0 = неактивен, не отрисовывается
+    int spawnCooldown;     // Время ожидания перед появлением
+    int x, y;              // Позиция
     int vx, vy;            // Скорость
 } SpaceObject;
 
